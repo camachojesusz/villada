@@ -130,7 +130,16 @@
                                     <div class="col-xs-12">
                                        <div class="form-group">
                                           <label for=""><sup><li class="fa fa-asterisk color-asterisk-required"></li></sup>Calidad</label>
-                                          <?php echo form_dropdown('txtquality', $quality, set_value('txtquality', '-1'), 'class="form-control select2" id="txtquality" onkeyup="data_ent()" required'); ?>
+                                          <?php if (empty($quality)): ?>
+                                             <div class="callout callout-warning">
+                                                <h4>Alerta!</h4>
+                                                <p class="">
+                                                   No se ha agregado alguna <?php echo anchor('size', 'Calidad', ''); ?>
+                                                </p>
+                                             </div>
+                                          <?php else: ?>
+                                             <?php echo form_dropdown('txtquality', $quality, set_value('txtquality', '-1'), 'class="form-control select2" id="txtquality" onkeyup="data_ent()" required'); ?>
+                                          <?php endif; ?>
                                        </div>
                                     </div>
                                  <?php endif; ?>
@@ -139,7 +148,16 @@
                                     <div class="col-xs-12">
                                        <div class="form-group">
                                           <label for=""><sup><li class="fa fa-asterisk color-asterisk-required"></li></sup>Categoría</label>
-                                          <?php echo form_dropdown('txtcategory', $category, set_value('txtcategory', '-1'), 'class="form-control select2" id="txtcategory" onkeyup="data_ent()" required'); ?>
+                                          <?php if (empty($category)): ?>
+                                             <div class="callout callout-warning">
+                                                <h4>Alerta!</h4>
+                                                <p class="">
+                                                   No se ha agregado alguna <?php echo anchor('size', 'Categoría', ''); ?>
+                                                </p>
+                                             </div>
+                                          <?php else: ?>
+                                             <?php echo form_dropdown('txtcategory', $category, set_value('txtcategory', '-1'), 'class="form-control select2" id="txtcategory" onkeyup="data_ent()" required'); ?>
+                                          <?php endif; ?>
                                        </div>
                                     </div>
                                  <?php endif; ?>

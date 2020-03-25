@@ -258,7 +258,7 @@
                                        </label>
                                        <br>
                                        <label for="txtdrivercandidate_b">
-                                          <input type="radio" id="txtdrivercandidate_b" required name="txtdrivercandidate" value="0" <?php if (isset($autocomplete1) && !empty($autocomplete1)){ if (!$comp_document = strcmp("0", $a = $autocomplete1['drivercandidate_employee'])) { echo "checked"; } } ?>>
+                                          <input checked type="radio" id="txtdrivercandidate_b" required name="txtdrivercandidate" value="0" <?php if (isset($autocomplete1) && !empty($autocomplete1)){ if (!$comp_document = strcmp("0", $a = $autocomplete1['drivercandidate_employee'])) { echo "checked"; } } ?>>
                                           No <i class="fa fa-thumbs-o-down"></i>
                                        </label>
                                     </div>
@@ -300,7 +300,6 @@
                <div class="col-xs-12 col-md-4 pull-right">
                   <div class="col-xs-6 col-sm-12 col-md-6">
                      <div class="form-group">
-                        <!-- <button type="reset" class="btn btn-sm btn-default btn-block">Cancelar <samp class="glyphicon glyphicon-remove"></samp></button> -->
                         <?php echo anchor('employee', 'Cancelar <samp class="glyphicon glyphicon-remove"></samp>', 'type="button" class="btn btn-sm btn-default btn-block"'); ?>
                      </div>
                   </div>

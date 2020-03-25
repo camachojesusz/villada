@@ -308,7 +308,7 @@
           </div>
           <div class="panel-body">
             No hay productos registrados, da clic en el botón para agregar uno &nbsp;
-            <a href="#modal_new_product" type="button" class="btn btn-info" data-toggle="modal" data-target="#modal_new_product">
+            <a href="#modal_new_product" type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#modal_new_product">
               Nuevo Producto <i class="fa fa-plus"></i>
             </a>
           </div>

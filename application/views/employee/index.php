@@ -134,13 +134,13 @@
                                                             <div class="box-body row">
                                                                <div class="col-xs-12">
                                                                   <div class="form-group">
-                                                                     <div class="col-xs-12 col-md-6"><p><b>Calle</b><br><?php echo $allemployees->street_employee;?></p></div>
-                                                                     <div class="col-xs-12 col-md-3"><p><b>Número exterior</b><br><?php echo $allemployees->numext_employee;?></p></div>
-                                                                     <div class="col-xs-12 col-md-3"><p><b>Número interior</b><br><?php echo $allemployees->numint_employee;?></p></div>
-                                                                     <div class="col-xs-12 col-md-4"><p><b>Localidad</b><br><?php echo $allemployees->local_employee;?></p></div>
-                                                                     <div class="col-xs-12 col-md-4"><p><b>Municipio</b><br><?php echo $allemployees->muni_employee;?></p></div>
-                                                                     <div class="col-xs-12 col-md-4"><p><b>Entidad federativa</b><br><?php echo $allemployees->state_employee;?></p></div>
-                                                                     <div class="col-xs-12 col-md-4"><p><b>Código Postal</b><br><?php echo $allemployees->postalcode_employee;?></p></div>
+                                                                     <div class="col-xs-12 col-md-6"><p><b>Calle</b><br><?php echo ($allemployees->street_employee != '') ? $allemployees->street_employee : 'No disponible' ;?></p></div>
+                                                                     <div class="col-xs-12 col-md-3"><p><b>Número exterior</b><br><?php echo ($allemployees->numext_employee != '') ? $allemployees->numext_employee : 'No disponible';?></p></div>
+                                                                     <div class="col-xs-12 col-md-3"><p><b>Número interior</b><br><?php echo ($allemployees->numint_employee != '') ? $allemployees->numint_employee : 'No disponible';?></p></div>
+                                                                     <div class="col-xs-12 col-md-4"><p><b>Localidad</b><br><?php echo ($allemployees->local_employee != '') ? $allemployees->local_employee : 'No disponible';?></p></div>
+                                                                     <div class="col-xs-12 col-md-4"><p><b>Municipio</b><br><?php echo ($allemployees->muni_employee != '') ? $allemployees->muni_employee : 'No disponible';?></p></div>
+                                                                     <div class="col-xs-12 col-md-4"><p><b>Entidad federativa</b><br><?php echo ($allemployees->state_employee != '') ? mb_strtoupper($allemployees->state_employee) : 'No disponible';?></p></div>
+                                                                     <div class="col-xs-12 col-md-4"><p><b>Código Postal</b><br><?php echo ($allemployees->postalcode_employee != '') ? $allemployees->postalcode_employee : 'No disponible';?></p></div>
                                                                   </div>
                                                                </div>
                                                             </div>

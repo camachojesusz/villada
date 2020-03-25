@@ -160,7 +160,7 @@
                      <h3 class="panel-title">¡Error!</h3>
                   </div>
                   <div class="panel-body">
-                     Aún no hay Compras. Da clic en el botón para realizar una compra <a href="<?php echo base_url();?>buy/new_buy" class="btn btn-info">Comprar <i class="fa fa-shopping-cart"></i>&nbsp;<sup><i class="fa fa-plus"></i></sup></a>
+                     Aún no hay Compras. Da clic en el botón para realizar una compra <?php echo anchor('buy/new_buy', 'Comprar <i class="fa fa-shopping-cart"></i>&nbsp;<sup><i class="fa fa-plus"></i>', 'class="btn btn-sm btn-info"'); ?>
                   </div>
                </div>
             </div>
