@@ -99,36 +99,45 @@
                               </div>
                            </div>
                            <div class="box-body row">
-                              <div class="col-xs-12">
-                                 <div class="form-group">
-                                    <label for="txtdestare"><sup><li class="fa fa-asterisk color-asterisk-required"></li></sup>Calcular destare</label>
-                                    <div class="input-group">
-                                       <div class="input-group-addon">
-                                          <label for="txtctrldestare_a">
-                                             <input checked type="radio" id="txtctrldestare_a" name="txtctrldestare" value="0" required>
-                                             Automático
-                                          </label>
+                              <?php if (empty($size_box)): ?>
+                                 <div class="callout callout-warning">
+                                    <h4>Alerta!</h4>
+                                    <p class="">
+                                       No se han agregado <?php echo anchor('size_box', 'Cajas', ''); ?>
+                                    </p>
+                                 </div>
+                              <?php else: ?>
+                                 <div class="col-xs-12">
+                                    <div class="form-group">
+                                       <label for="txtdestare"><sup><li class="fa fa-asterisk color-asterisk-required"></li></sup>Calcular destare</label>
+                                       <div class="input-group">
+                                          <div class="input-group-addon">
+                                             <label for="txtctrldestare_a">
+                                                <input checked type="radio" id="txtctrldestare_a" name="txtctrldestare" value="0" required>
+                                                Automático
+                                             </label>
+                                          </div>
+                                          <?php echo form_dropdown('txtsizebox', (empty($size_box)) ? '' : $size_box, set_value('txtsizebox', '-1'), 'class="form-control select2" id="txtsizebox"'); ?>
                                        </div>
-                                       <?php echo form_dropdown('txtsizebox', (empty($size_box)) ? '' : $size_box, set_value('txtsizebox', '-1'), 'class="form-control select2" id="txtsizebox"'); ?>
                                     </div>
                                  </div>
-                              </div>
-                              <div class="col-xs-12">
-                                 <div class="form-group">
-                                    <div class="input-group">
-                                       <div class="input-group-addon">
-                                          <label for="txtctrldestare_b">
-                                             <input type="radio" id="txtctrldestare_b" name="txtctrldestare" value="1" required>
-                                             Manual
-                                          </label>
+                                 <div class="col-xs-12">
+                                    <div class="form-group">
+                                       <div class="input-group">
+                                          <div class="input-group-addon">
+                                             <label for="txtctrldestare_b">
+                                                <input type="radio" id="txtctrldestare_b" name="txtctrldestare" value="1" required>
+                                                Manual
+                                             </label>
+                                          </div>
+                                          <input class="form-control" type="tel" min="0" id="txtvaldestare" name="txtvaldestare" placeholder="calcular destare manualmente" disabled="true">
+                                          <span class="input-group-btn">
+                                             <button disabled id="btndestare" type="button" class="btn btn-info btn-flat"><i class="fa fa-check"></i></button>
+                                          </span>
                                        </div>
-                                       <input class="form-control" type="tel" min="0" id="txtvaldestare" name="txtvaldestare" placeholder="calcular destare manualmente" disabled="true">
-                                       <span class="input-group-btn">
-                                          <button disabled id="btndestare" type="button" class="btn btn-info btn-flat"><i class="fa fa-check"></i></button>
-                                       </span>
                                     </div>
                                  </div>
-                              </div>
+                              <?php endif; ?>
                            </div>
                         </div>
                      </div>

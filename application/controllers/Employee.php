@@ -133,7 +133,7 @@ class Employee extends CI_Controller {
          'numext_employee'          => mb_strtoupper(($this->input->post('txtnumext') === '') ? '0' : $this->input->post('txtnumext')),
          'local_employee'           => mb_strtoupper($this->input->post('txtlocal')),
          'muni_employee'            => mb_strtoupper($this->input->post('txtmuni')),
-         'state_employee'           => mb_strtoupper($this->input->post('txtstate')),
+         'state_employee'           => $this->input->post('txtstate'),
          'postalcode_employee'      => $this->input->post('txtpostalcode'),
          'phone_employee'           => $this->input->post('txtphone'),
          'cel_employee'             => $this->input->post('txtcel'),

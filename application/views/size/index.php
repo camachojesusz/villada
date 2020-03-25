@@ -41,8 +41,8 @@
                   </p>
                </div>
                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
-                  <button type="button submit" class="btn btn-success" name="btnsend">Guardar <samp class="glyphicon glyphicon-floppy-disk"></samp></button>
+                  <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
+                  <button type="button submit" class="btn btn-sm btn-success" name="btnsend">Guardar <samp class="glyphicon glyphicon-floppy-disk"></samp></button>
                </div>
                <?php echo form_close(); ?>
             </div>
@@ -79,8 +79,8 @@
                   </p>
                </div>
                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
-                  <button type="button submit" class="btn btn-success" name="btnsend">Guardar <samp class="glyphicon glyphicon-floppy-disk"></samp></button>
+                  <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
+                  <button type="button submit" class="btn btn-sm btn-success" name="btnsend">Guardar <samp class="glyphicon glyphicon-floppy-disk"></samp></button>
                </div>
                <?php echo form_close(); ?>
             </div>
@@ -221,8 +221,8 @@
                                                          </p>
                                                       </div>
                                                       <div class="modal-footer">
-                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
-                                                         <button type="button submit" class="btn btn-success" name="btnsend">Guardar <samp class="glyphicon glyphicon-floppy-disk"></samp></button>
+                                                         <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
+                                                         <button type="button submit" class="btn btn-sm btn-success" name="btnsend">Guardar <samp class="glyphicon glyphicon-floppy-disk"></samp></button>
                                                       </div>
                                                       <?php echo form_close(); ?>
                                                    </div>
@@ -267,7 +267,7 @@
                                                          </div>
                                                       </div>
                                                       <div class="modal-footer">
-                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
+                                                         <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
                                                          <?php echo anchor('size/status_size/0/'.$qualities->quality_id, 'Continuar <i class="fa fa-check"></i>', 'type="button" class="btn btn-success"'); ?>
                                                       </div>
                                                    </div>
@@ -340,8 +340,8 @@
                                                          </p>
                                                       </div>
                                                       <div class="modal-footer">
-                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
-                                                         <button type="button submit" class="btn btn-success" name="btnsend">Guardar <samp class="glyphicon glyphicon-floppy-disk"></samp></button>
+                                                         <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
+                                                         <button type="button submit" class="btn btn-sm btn-success" name="btnsend">Guardar <samp class="glyphicon glyphicon-floppy-disk"></samp></button>
                                                       </div>
                                                       <?php echo form_close(); ?>
                                                    </div>
@@ -386,7 +386,7 @@
                                                          </div>
                                                       </div>
                                                       <div class="modal-footer">
-                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
+                                                         <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
                                                          <?php echo anchor('size/status_size/1/'.$categories->category_id, 'Continuar <i class="fa fa-check"></i>', 'type="button" class="btn btn-success"'); ?>
                                                       </div>
                                                    </div>

@@ -159,11 +159,11 @@
                                                             <div class="col-xs-12">
                                                                <div class="form-group">
                                                                   <div class="col-xs-12 col-md-6"><p><b>Calle</b><br><?php echo ($allproducers->street_producer != '') ? $allproducers->street_producer : 'No disponible';?></p></div>
-                                                                  <div class="col-xs-12 col-md-3"><p><b>Número exterior</b><br><?php echo ($allproducers->numint_producer != '') ? $allproducers->numint_producer : 'No disponible';?></p></div>
+                                                                  <div class="col-xs-12 col-md-3"><p><b>Número exterior</b><br><?php echo ($allproducers->numint_producer != '') ? $allproducers->numext_producer : 'No disponible';?></p></div>
                                                                   <div class="col-xs-12 col-md-3"><p><b>Número interior</b><br><?php echo ($allproducers->numint_producer != '') ? $allproducers->numint_producer : 'No disponible';?></p></div>
                                                                   <div class="col-xs-12 col-md-6"><p><b>Localidad</b><br><?php echo ($allproducers->local_producer != '') ? $allproducers->local_producer : 'No disponible';?></p></div>
                                                                   <div class="col-xs-12 col-md-6"><p><b>Municipio</b><br><?php echo ($allproducers->muni_producer != '') ? $allproducers->muni_producer : 'No disponible';?></p></div>
-                                                                  <div class="col-xs-12 col-md-6"><p><b>Estado</b><br><?php echo ($allproducers->state_producer != '-1') ? $allproducers->state_producer : 'No disponible' ;?></p></div>
+                                                                  <div class="col-xs-12 col-md-6"><p><b>Estado</b><br><?php echo ($allproducers->state_producer != '-1') ? mb_strtoupper($allproducers->state_producer) : 'No disponible' ;?></p></div>
                                                                   <div class="col-xs-12 col-md-6"><p><b>Código Postal</b><br><?php echo ($allproducers->postalcode_producer != '') ? $allproducers->postalcode_producer : 'No disponible';?></p></div>
                                                                </div>
                                                             </div>

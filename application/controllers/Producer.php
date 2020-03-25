@@ -152,7 +152,7 @@ class Producer extends CI_Controller
       $document_type = $this->input->post('txtdocument');
       $config_rules['ctrl_rules'] = $txt_sender;
       $config_rules['doc_type'] =$document_type;
-      $config_rules['auxiliar_sender'] = '0';
+      $config_rules['auxiliar_sender'] = '1';
 
       $autocomplete = [
          'noctrl_e_producer'         => $this->input->post('txtideditable'),
@@ -168,7 +168,7 @@ class Producer extends CI_Controller
          'numext_producer'           => mb_strtoupper(($this->input->post('txtnumext') === '') ? '0': $this->input->post('txtnumext')),
          'local_producer'            => mb_strtoupper($this->input->post('txtlocal')),
          'muni_producer'             => mb_strtoupper($this->input->post('txtmuni')),
-         'state_producer'            => mb_strtoupper($this->input->post('txtstate')),
+         'state_producer'            => $this->input->post('txtstate'),
          'postalcode_producer'       => $this->input->post('txtpostalcode'),
          'phone_producer'            => $this->input->post('txtphone'),
          'cel_producer'              => $this->input->post('txtcel'),

@@ -126,7 +126,7 @@
                     <div class="input-group-addon">
                       <i class="fa fa-envelope"></i>
                     </div>
-                    <input class="form-control" type="email" id="txtemail" name="txtemail" placeholder="ejemplo@ejemplo.com" vvalue="<?php echo $producer_info->row()->email_producer;?>">
+                    <input class="form-control" type="email" id="txtemail" name="txtemail" placeholder="ejemplo@ejemplo.com" value="<?php echo $producer_info->row()->email_producer;?>">
                   </div>
                 </div>
               </div>

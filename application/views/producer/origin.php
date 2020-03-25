@@ -38,7 +38,7 @@
                      <div class="col-xs-12">
                         <div class="form-group">
                            <label for=""><li class="fa fa-exclamation-circle color-exclamation-sign-b"></li>&nbsp;<sup><li class="fa fa-asterisk color-asterisk-required"></li></sup>Productos</label><br>
-                           <?php echo form_multiselect('txtproduct_origin[]', $info_product, set_value('txtproduct_origin[]', ''), 'class="form-control select2" multiple="multiple" style="width: 100%;" required'); ?>
+                           <?php echo form_multiselect('txtproduct_origin[]', $info_product, set_value('txtproduct_origin[]', '0'), 'class="form-control select2" multiple="multiple" style="width: 100%;" required'); ?>
                         </div>
                      </div>
                      <div class="col-xs-12">
@@ -162,7 +162,7 @@
                                        </td>
                                        <td>
                                           <i class="fa fa-map-marker"></i>
-                                          <?php echo ($all_origins->location_origin != '') ? $all_origins->location_origin : '-' ; ?>
+                                          <?php echo ($all_origins->location_origin != '') ? $all_origins->location_origin : 'No disponible' ; ?>
                                        </td>
                                        <td>
                                           <?php
