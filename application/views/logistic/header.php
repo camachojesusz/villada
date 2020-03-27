@@ -30,17 +30,12 @@
                </div>
                <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                   <ul class="nav navbar-nav">
-                     <li class=""><?php echo anchor('buy', 'Compras', ''); ?></li>
                      <li class=""><?php echo anchor('logistic/logistic_index', 'Logística', ''); ?></li>
-                     <li class=""><?php echo anchor('', 'Ventas', ''); ?></li>
                      <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menú <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                           <li><?php echo anchor('employee', '<i class="fa fa-user"></i>Empleados</a>', ''); ?></li>
-                           <li><?php echo anchor('size_box', '<i class="fa fa-dropbox"></i>Cajas</a>', ''); ?></li>
-                           <li><?php echo anchor('size', '<i class="fa fa-cubes"></i>Tamaños', ''); ?></li>
-                           <li><?php echo anchor('product', '<span class="glyphicon glyphicon-apple"></span>Productos', ''); ?></li>
-                           <li><?php echo anchor('producer', '<i class="fa fa-truck"></i>Proveedores</a>', ''); ?></li>
+                           <li><?php echo anchor('logistic/driver/driver_index', '<i class="fa fa-user"></i>Conductores</a>', ''); ?></li>
+                           <li><?php echo anchor('logistic/vehicles/vehicles_index', '<i class="fa fa-truck"></i>Vehiculos</a>', ''); ?></li>
                         </ul>
                      </li>
                   </ul>
