@@ -4,12 +4,20 @@ class Driver_model extends CI_Model
 {
    private $table_employee;
    private $table_driver;
+   private $table_states;
 
    function __construct()
    {
       parent:: __construct();
       $this->table_employee = 'employee';
       $this->table_driver   = 'driver';
+      $this->table_states   = 'states';
+   }
+
+   function get_states()
+   {
+      $this->db->where('status', '1');
+      return $this->db->get($this->table_states);
    }
 
    function get_driver($id = NULL)
@@ -18,7 +26,7 @@ class Driver_model extends CI_Model
       {
          $this->db->where('driver_id', $id);
       }
-      $this->db->where('status', '1');
+      // $this->db->where('status', '1');
       return $this->db->get($this->table_driver);
    }
 
@@ -40,7 +48,7 @@ class Driver_model extends CI_Model
       return $this->db->insert_id();
    }
 
-   function edit_driver($info_driver = NULL)
+   function update_driver($info_driver = NULL)
    {
       $this->db->where('driver_id', $info_driver['driver_id']);
       $this->db->update($this->table_driver, $info_driver);

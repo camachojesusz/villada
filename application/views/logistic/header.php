@@ -30,12 +30,13 @@
                </div>
                <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                   <ul class="nav navbar-nav">
-                     <li class=""><?php echo anchor('logistic/logistic_index', 'Logística', ''); ?></li>
                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menú <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Logística <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                           <li><?php echo anchor('logistic/driver/driver_index', '<i class="fa fa-user"></i>Conductores</a>', ''); ?></li>
-                           <li><?php echo anchor('logistic/vehicles/vehicles_index', '<i class="fa fa-truck"></i>Vehiculos</a>', ''); ?></li>
+                           <li><?php echo anchor('logistic/logistic', '<i class="fa fa-road"></i>Logística', 'title="Inicio Lógistica"'); ?></li>
+                           <li><?php echo anchor('logistic/driver', '<i class="fa fa-user"></i>Conductores</a>', ''); ?></li>
+                           <li><?php echo anchor('logistic/vehicles', '<i class="fa fa-truck"></i>Vehiculos</a>', ''); ?></li>
+                           <li><?php echo anchor('logistic/destiny', '<i class="fa fa-map-marker"></i>Destinos', 'title="Inicio Lógistica"'); ?></li>
                         </ul>
                      </li>
                   </ul>

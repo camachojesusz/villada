@@ -93,7 +93,6 @@ class Employee extends CI_Controller {
       $this->form_validation->set_rules('txtphone', 'Telefono', 'trim|alpha_numeric_spaces', ['trim' => 'Error de <b>%s</b>', 'alpha_numeric_spaces' => 'Formato inválido en: <b>%s</b>']);
       $this->form_validation->set_rules('txtcel', 'Celular', 'trim|alpha_numeric_spaces', ['trim' => 'Error de <b>%s</b>', 'alpha_numeric_spaces' => 'Formato inválido en: <b>%s</b>']);
       $this->form_validation->set_rules('txtemail', 'Correcto electrónico', 'trim|valid_email', ['trim' => 'Error de <b>%s</b>', 'valid_email' => 'Formato inválido en: <b>%s</b>']);
-      $this->form_validation->set_rules('txtcel', 'Celular', 'trim|alpha_numeric_spaces', ['trim' => 'Error de <b>%s</b>', 'alpha_numeric_spaces' => 'Formato inválido en: <b>%s</b>']);
       $this->form_validation->set_rules('txtdrivercandidate', '¿Cuenta con licencia de conducir?', 'required', ['required' => 'Campo requerido <b>%s</b>']);
       if ($config_rules['driver'] === '1')
       {

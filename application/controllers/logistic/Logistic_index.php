@@ -7,8 +7,6 @@ class Logistic_index extends CI_Controller
    function __construct()
    {
       parent:: __construct();
-      $this->load->model('logistic/driver/driver_model');
-      $this->load->model('logistic/vehicles/vehicles_model');
    }
 
    function index()
