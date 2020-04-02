@@ -62,7 +62,7 @@
                               <div class="input-group-addon">
                                  <i class="fa fa-calendar-check-o"></i>
                               </div>
-                              <input class="form-control" type="text" id="txtexperieciedrive" name="txtexperieciedrive" placeholder="experiencia de manejo (años)" value="<?php if (isset($auto_complete) && !empty($auto_complete)){echo $auto_complete['experiecie_drive'];} ?>">
+                              <input class="form-control" type="text" id="txtexperieciedrive" name="txtexperieciedrive" placeholder="experiencia de manejo (años)" value="<?php if (isset($auto_complete) && !empty($auto_complete)){echo $auto_complete['experiencie_drive'];} ?>">
                            </div>
                         </div>
                      </div>

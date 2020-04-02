@@ -48,7 +48,7 @@
                                  <table id="general_table" class="table table-bordered table-striped table-hover table-condensed dataTable" role="grid" aria-describedby="general_table_info">
                                     <thead>
                                        <tr role="row">
-                                          <th hidden=""><?php echo ''; ?> </th>
+                                          <th hidden=""><?php echo ''; ?></th>
                                           <th>Conductor</th>
                                           <th>Folio Licencia</th>
                                           <th>Tipo Licencia</th>

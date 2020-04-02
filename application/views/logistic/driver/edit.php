@@ -189,7 +189,7 @@
                         <div class="col-xs-12 col-md-4">
                            <div class="form-group">
                               <label for="txtlocal">Localidad o Colonia</label>
-                              <input class="form-control" type="text" id="txtlocal" name="txtlocal" placeholder="localidad o colonia" value="<?php $drive->row()->local; ?>">
+                              <input class="form-control" type="text" id="txtlocal" name="txtlocal" placeholder="localidad o colonia" value="<?php echo $drive->row()->local; ?>">
                            </div>
                         </div>
                         <div class="col-xs-12 col-md-4">

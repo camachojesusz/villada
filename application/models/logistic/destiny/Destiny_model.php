@@ -3,11 +3,19 @@
 class Destiny_model extends CI_Model
 {
    private $table_destiny;
+   private $table_states;
 
    function __construct()
    {
       parent:: __construct();
       $this->table_destiny = 'destiny';
+      $this->table_states   = 'states';
+   }
+
+   function get_states()
+   {
+      $this->db->where('status', '1');
+      return $this->db->get($this->table_states);
    }
 
    function get_destiny($id = NULL)
@@ -16,7 +24,6 @@ class Destiny_model extends CI_Model
       {
          $this->db->where('destiny_id', $id);
       }
-      $this->db->where('status', '1');
       return $this->db->get($this->table_destiny);
    }
 
