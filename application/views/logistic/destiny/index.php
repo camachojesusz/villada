@@ -60,7 +60,7 @@
                                           <tr role="row">
                                              <td class="hidden"><?php echo $dty->destiny_id; ?></td>
                                              <td><?php echo $dty->description_d; ?></td>
-                                             <td><p><small class="label label-info"><i class="fa fa-check"></i> <?php echo 'x'.$dty->row()->destare; ?></small></p></td>
+                                             <td><p><small class="label label-info"><i class="fa fa-check"></i> <?php echo 'x'.$dty->destare; ?></small></p></td>
                                              <td>
                                                 <?php if ($dty->status === '0'): ?>
                                                 <small class="label label-danger"><i class="fa fa-remove"></i> Inactivo</small>
@@ -93,7 +93,7 @@
                                                    <div class="modal-body">
                                                       <div class="row">
                                                          <div class="col-xs-12">
-                                                            <div class="box collapsed-box box-primary">
+                                                            <div class="box box-primary">
                                                                <div class="box-header with-border">
                                                                   <h3 class="box-title">Ubibacón</h3>
                                                                   <div class="box-tools pull-right">
@@ -152,8 +152,11 @@
                                                                </div>
                                                                <div class="box-body">
                                                                   <div class="row">
-                                                                     <div class="col-xs-12">
-                                                                        <p><b><i class="fa fa-map-marker"></i></b><br><?php echo $dty->description_d; ?></p>
+                                                                     <div class="col-xs-12 col-md-8">
+                                                                        <p><b><i class="fa fa-map-marker"></i></b>&nbsp;<?php echo $dty->description_d; ?></p>
+                                                                     </div>
+                                                                     <div class="col-xs-12 col-md-4">
+                                                                        <p><small class="label label-info" title="Destare"><i class="fa fa-check"></i> <?php echo 'x'.$dty->destare; ?></small></p>
                                                                      </div>
                                                                   </div>
                                                                </div>
@@ -162,7 +165,7 @@
                                                       </div>
                                                    </div>
                                                    <div class="modal-footer">
-                                                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span>
+                                                      <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span>
                                                       </button>
                                                       <?php echo anchor('logistic/destiny/status/'.$dty->status.'/'.$dty->destiny_id, 'Continuar <i class="fa fa-check"></i>', 'type="button" class="btn btn-sm btn-success"');  ?>
                                                    </div>

@@ -126,6 +126,7 @@ DROP TABLE IF EXISTS `ia_destiny`;
 CREATE TABLE `ia_destiny` (
   `destiny_id` int(10) UNSIGNED NOT NULL,
   `description_d` text NOT NULL,
+  `type_destare` enum('0','1') DEFAULT '0',
   `destare` float UNSIGNED DEFAULT NULL,
   `street` text DEFAULT NULL,
   `numint` varchar(10) DEFAULT NULL,

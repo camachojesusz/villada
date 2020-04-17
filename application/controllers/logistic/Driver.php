@@ -87,23 +87,24 @@ class Driver extends CI_Controller
       $txt_sender          = $this->input->post('txtsender');
       $config_rules['sdr'] = $txt_sender;
       $auto_complete       = [
-         'driver_id'        => $this->input->post('txtdriver'),
-         'sheet_licence'    => mb_strtoupper($this->input->post('txtsheetlicence')),
-         'type_licence'     => mb_strtoupper($this->input->post('txttypelicence')),
+         'driver_id'         => $this->input->post('txtdriver'),
+         'sheet_licence'     => mb_strtoupper($this->input->post('txtsheetlicence')),
+         'type_licence'      => mb_strtoupper($this->input->post('txttypelicence')),
          'experiencie_drive' => mb_strtoupper($this->input->post('txtexperieciedrive')),
-         'name'             => mb_strtoupper($this->input->post('txtname')),
-         'ap1'              => mb_strtoupper($this->input->post('txtap1')),
-         'ap2'              => mb_strtoupper($this->input->post('txtap2')),
-         'phone'            => $this->input->post('txtphone'),
-         'mobile_phone'     => $this->input->post('txtcel'),
-         'email'            => $this->input->post('txtemail'),
-         'street'           => mb_strtoupper($this->input->post('txtstreet')),
-         'numint'           => mb_strtoupper(($this->input->post('txtnumint') === '') ? '0' : $this->input->post('txtnumint')),
-         'numext'           => mb_strtoupper(($this->input->post('txtnumext') === '') ? '0' : $this->input->post('txtnumext')),
-         'local'            => mb_strtoupper($this->input->post('txtlocal')),
-         'muni'             => mb_strtoupper($this->input->post('txtmuni')),
-         'state'            => $this->input->post('txtstate'),
-         'postal_code'      => mb_strtoupper($this->input->post('txtpostalcode'))
+         'name'              => mb_strtoupper($this->input->post('txtname')),
+         'ap1'               => mb_strtoupper($this->input->post('txtap1')),
+         'ap2'               => mb_strtoupper($this->input->post('txtap2')),
+         'phone'             => $this->input->post('txtphone'),
+         'mobile_phone'      => $this->input->post('txtcel'),
+         'email'             => $this->input->post('txtemail'),
+         'street'            => mb_strtoupper($this->input->post('txtstreet')),
+         'numint'            => mb_strtoupper(($this->input->post('txtnumint') === '') ? '0' : $this->input->post('txtnumint')),
+         'numext'            => mb_strtoupper(($this->input->post('txtnumext') === '') ? '0' : $this->input->post('txtnumext')),
+         'local'             => mb_strtoupper($this->input->post('txtlocal')),
+         'muni'              => mb_strtoupper($this->input->post('txtmuni')),
+         'state'             => $this->input->post('txtstate'),
+         'postal_code'       => mb_strtoupper($this->input->post('txtpostalcode')),
+         'user_id'           => 1
       ];
       $this->_form_validation($config_rules);
       if ($this->form_validation->run() === FALSE)

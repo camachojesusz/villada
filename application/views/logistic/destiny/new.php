@@ -38,63 +38,51 @@
                         </div>
                      </div>
                      <div class="box-body row">
-                        <div class="col-xs-12 col-md-6">
+                        <div class="col-xs-12 col-md-5">
                            <div class="form-group">
                               <label for="txtname"><sup><li class="fa fa-asterisk color-asterisk-required"></li></sup>Destino</label>
                               <input type="hidden" id="txtsender" name="txtsender" value="0">
-                              <input required class="form-control" type="text" id="txtname" name="txtname" placeholder="destino" value="<?php if (isset($auto_complete) && !empty($auto_complete)){echo $auto_complete['description_d'];} ?>">
+                              <input required class="form-control" type="text" id="txtname" name="txtname" placeholder="destino" value="<?php if (isset($auto_complete)){echo $auto_complete['description_d'];} ?>">
                            </div>
                         </div>
-                        <div class="col-xs-12 col-md-6">
-                           <div class="box  box-success">
-                              <div class="box-header with-border">
-                                 <h3 class="box-title">Calcular destare</h3>
-                                 <div class="box-tools pull-right">
-                                    <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Minimizar"><i class="fa fa-minus"></i></button>
+                        <div class="col-xs-12 col-md-7">
+                           <?php if (empty($size_box)): ?>
+                              <div class="callout callout-warning">
+                                 <h4>¡Alerta!</h4>
+                                 <p class="">
+                                    No se han agregado <b>Cajas</b>
+                                 </p>
+                              </div>
+                           <?php else: ?>
+                              <div class="col-xs-12 col-md-6">
+                                 <div class="form-group">
+                                    <label for="txtdestare"><li class="fa fa-exclamation-circle color-exclamation-sign-b"></li>&nbsp;<sup><li class="fa fa-asterisk color-asterisk-required"></li></sup>Calcular destare</label>
+                                    <div class="input-group">
+                                       <div class="input-group-addon">
+                                          <label for="txtctrldestare_a">
+                                             <input checked type="radio" id="txtctrldestare_a" name="txtctrldestare" value="0" required <?php echo (isset($auto_complete) && $auto_complete['type_destare'] === '0') ? 'checked' : '' ; ?>>
+                                             Automático
+                                          </label>
+                                       </div>
+                                       <?php echo form_dropdown('txtsizebox', (empty($size_box)) ? '' : $size_box, set_value('txtsizebox', (isset($auto_complete) && $auto_complete['type_destare'] === '0') ? 'checked' : '-1' ), 'class="form-control select2" id="txtsizebox"'); ?>
+                                    </div>
                                  </div>
                               </div>
-                              <div class="box-body row">
-                                 <?php if (empty($size_box)): ?>
-                                    <div class="callout callout-warning">
-                                       <h4>Alerta!</h4>
-                                       <p class="">
-                                          No se han agregado <?php echo anchor('size_box', 'Cajas', ''); ?>
-                                       </p>
-                                    </div>
-                                 <?php else: ?>
-                                    <div class="col-xs-12">
-                                       <div class="form-group">
-                                          <label for="txtdestare"><li class="fa fa-exclamation-circle color-exclamation-sign-b"></li>&nbsp;<sup><li class="fa fa-asterisk color-asterisk-required"></li></sup>Calcular destare</label>
-                                          <div class="input-group">
-                                             <div class="input-group-addon">
-                                                <label for="txtctrldestare_a">
-                                                   <input checked type="radio" id="txtctrldestare_a" name="txtctrldestare" value="0" required>
-                                                   Automático
-                                                </label>
-                                             </div>
-                                             <?php echo form_dropdown('txtsizebox', (empty($size_box)) ? '' : $size_box, set_value('txtsizebox', '-1'), 'class="form-control select2" id="txtsizebox"'); ?>
-                                          </div>
+                              <div class="col-xs-12 col-md-6">
+                                 <div class="form-group">
+                                    <label for="">&nbsp;</label>
+                                    <div class="input-group">
+                                       <div class="input-group-addon">
+                                          <label for="txtctrldestare_b">
+                                             <input type="radio" id="txtctrldestare_b" name="txtctrldestare" value="1" required <?php echo (isset($auto_complete) && $auto_complete['type_destare'] === '1') ? 'checked' : '' ; ?>>
+                                             Manual
+                                          </label>
                                        </div>
+                                       <input class="form-control" type="tel" min="0" id="txtvaldestare" name="txtvaldestare" placeholder="calcular destare manualmente" title="calcular destare manualmente" disabled="<?php echo (isset($auto_complete) && $auto_complete['type_destare'] === '1') ? 'false' : 'true' ; ?>" value="<?php echo (isset($auto_complete) && $auto_complete['type_destare'] === '1') ? $auto_complete['destare'] : '' ; ?>">
                                     </div>
-                                    <div class="col-xs-12">
-                                       <div class="form-group">
-                                          <div class="input-group">
-                                             <div class="input-group-addon">
-                                                <label for="txtctrldestare_b">
-                                                   <input type="radio" id="txtctrldestare_b" name="txtctrldestare" value="1" required>
-                                                   Manual
-                                                </label>
-                                             </div>
-                                             <input class="form-control" type="tel" min="0" id="txtvaldestare" name="txtvaldestare" placeholder="calcular destare manualmente" disabled="true">
-                                             <span class="input-group-btn">
-                                                <button disabled id="btndestare" type="button" class="btn btn-info btn-flat"><i class="fa fa-check"></i></button>
-                                             </span>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 <?php endif; ?>
+                                 </div>
                               </div>
-                           </div>
+                           <?php endif; ?>
                         </div>
                      </div>
                      <div class="box-footer">
@@ -118,39 +106,39 @@
                         <div class="col-xs-12 col-md-4">
                            <div class="form-group">
                               <label for="txtstreet">Calle</label>
-                              <input class="form-control" type="text" id="txtstreet" name="txtstreet" placeholder="calle" value="<?php if (isset($auto_complete) && !empty($auto_complete)){echo $auto_complete['street'];} ?>">
+                              <input class="form-control" type="text" id="txtstreet" name="txtstreet" placeholder="calle" value="<?php if (isset($auto_complete)){echo $auto_complete['street'];} ?>">
                            </div>
                         </div>
                         <div class="col-xs-12 col-md-8">
                            <div class="col-xs-12 col-sm-4">
                               <div class="form-group">
                                  <label for="txtnumint"><li class="fa fa-exclamation-circle color-exclamation-sign-a"></li >&nbsp;Número interior</label>
-                                 <input class="form-control" type="text" id="txtnumint" name="txtnumint" placeholder="0" default="0" value="<?php if (isset($auto_complete) && !empty($auto_complete)){echo $auto_complete['numint'];} ?>">
+                                 <input class="form-control" type="text" id="txtnumint" name="txtnumint" placeholder="0" default="0" value="<?php if (isset($auto_complete)){echo $auto_complete['numint'];} ?>">
                               </div>
                            </div>
                            <div class="col-xs-12 col-sm-4">
                               <div class="form-group">
                                  <label for="txtnumext"><li class="fa fa-exclamation-circle color-exclamation-sign-a"></li>&nbsp;Número exterior</span></label>
-                                 <input class="form-control" type="text" id="txtnumext" name="txtnumext" placeholder="0" default="0" value="<?php if (isset($auto_complete) && !empty($auto_complete)){echo $auto_complete['numext'];} ?>">
+                                 <input class="form-control" type="text" id="txtnumext" name="txtnumext" placeholder="0" default="0" value="<?php if (isset($auto_complete)){echo $auto_complete['numext'];} ?>">
                               </div>
                            </div>
                            <div class="col-xs-12 col-sm-4">
                               <div class="form-group">
                                  <label for="txtpostalcode">Código Postal</label>
-                                 <input class="form-control" type="text" maxlength="5" id="txtpostalcode" name="txtpostalcode" placeholder="CP" value="<?php if (isset($auto_complete) && !empty($auto_complete)){echo $auto_complete['postal_code'];} ?>">
+                                 <input class="form-control" type="text" maxlength="5" id="txtpostalcode" name="txtpostalcode" placeholder="CP" value="<?php if (isset($auto_complete)){echo $auto_complete['postal_code'];} ?>">
                               </div>
                            </div>
                         </div>
                         <div class="col-xs-12 col-md-4">
                            <div class="form-group">
                               <label for="txtlocal">Localidad o Colonia</label>
-                              <input class="form-control" type="text" id="txtlocal" name="txtlocal" placeholder="localidad o colonia" value="<?php if (isset($auto_complete) && !empty($auto_complete)){ echo $auto_complete['local'];} ?>">
+                              <input class="form-control" type="text" id="txtlocal" name="txtlocal" placeholder="localidad o colonia" value="<?php if (isset($auto_complete)){ echo $auto_complete['local'];} ?>">
                            </div>
                         </div>
                         <div class="col-xs-12 col-md-4">
                            <div class="form-group">
                               <label for="txtmuni">Municipio</label>
-                              <input class="form-control" type="text" id="txtmuni" name="txtmuni" placeholder="municipio" value="<?php if (isset($auto_complete) && !empty($auto_complete)){echo $auto_complete['muni'];} ?>">
+                              <input class="form-control" type="text" id="txtmuni" name="txtmuni" placeholder="municipio" value="<?php if (isset($auto_complete)){echo $auto_complete['muni'];} ?>">
                            </div>
                         </div>
                         <div class="col-xs-12 col-md-4">
