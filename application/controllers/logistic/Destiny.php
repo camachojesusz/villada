@@ -52,7 +52,7 @@ class Destiny extends CI_Controller
          'destiny_id' => $destiny_id,
          'status' => ($status === '1') ? '0' : '1'
       ];
-      $this->destiny_model->update_destiny($info_destiny);
+      $this->destiny_model->edit_destiny($info_destiny);
       $data['status_alert'] = $info_destiny['status'];
       $data['destiny'] = $this->destiny_model->get_destiny()->result();
       $this->load->view('logistic/destiny/index', $data);
