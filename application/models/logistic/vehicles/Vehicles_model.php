@@ -27,11 +27,11 @@ class Vehicles_model extends CI_Model
       $this->db->join($this->table_vehicle_type, $this->table_vehicle.'.vehicle_type = '.$this->table_vehicle_type.'.vt_id');
       if ($vehicle_id)
       {
-         $this->db->where($this->table_vehicle.'.vehicle_id', $vehicle_id);
+         $this->db->where($this->table_vehicle.'.vehicle_id',$vehicle_id);
       }
       if ($vt_id)
       {
-         $this->db->where($this->table_vehicle_type.'.vt_id', $vt_id);
+         $this->db->where($this->table_vehicle_type.'.vt_id',$vt_id);
       }
       return $this->db->get($this->table_vehicle);
    }

@@ -69,8 +69,7 @@
                                                 <?php endif; ?>
                                              </td>
                                              <td class="text-center">
-                                                <a href="#modal_more_<?php echo $dty->destiny_id;?>" type="button" class="btn btn-xs btn-default" data-toggle="modal" data-target="#modal_more_<?php echo $dty->destiny_id;?>" title="Ver más"><i class="fa fa-eye"></i>
-                                                </a>
+                                                <a href="#modal_more_<?php echo $dty->destiny_id;?>" type="button" class="btn btn-xs btn-default" data-toggle="modal" data-target="#modal_more_<?php echo $dty->destiny_id;?>" title="Ver más"><i class="fa fa-eye"></i></a>
                                                 <?php echo anchor('logistic/destiny/edit/'.$dty->destiny_id, '<i class="fa fa-edit" ></i>', 'type="button" title="Editar" class="btn btn-primary btn-xs '.(($dty->status === '0') ? ('hidden') : ('')).'"'); ?>
                                                 <?php if ($dty->status === '1'): ?>
                                                    <a href="#modal_delete_<?php echo $dty->destiny_id;?>" type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal_delete_<?php echo $dty->destiny_id; ?>" title="Desactivar">

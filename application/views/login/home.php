@@ -10,6 +10,9 @@
       </section>
       <hr>
       <div class="row">
+         <div class="col-md-4">
+            <img src="<?php echo base_url(); ?>assets/complements/img/villada_img.jpeg" class="img-responsive">
+         </div>
          <div class="col-xs-12 col-md-4">
             <div class="box box-primary">
                <div class="box-header with-border">
