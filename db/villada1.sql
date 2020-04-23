@@ -490,7 +490,7 @@ CREATE TABLE `ia_vehicle` (
   `description_v` text DEFAULT NULL,
   `vehicle_type` int(10) UNSIGNED NOT NULL,
   `add_timestamp` timestamp NOT NULL DEFAULT current_timestamp(),
-  `status` enum('0','1') NOT NULL DEFAULT '1',
+  `status_v` enum('0','1') NOT NULL DEFAULT '1',
   `user_id` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
