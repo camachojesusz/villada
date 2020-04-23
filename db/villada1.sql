@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-03-2020 a las 19:55:30
+-- Tiempo de generación: 30-03-2020 a las 06:34:50
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.7
 
@@ -26,8 +26,6 @@ SET time_zone = "+00:00";
 
 --
 -- Estructura de tabla para la tabla `ia_arrival`
---
--- Creación: 07-02-2020 a las 21:04:07
 --
 
 DROP TABLE IF EXISTS `ia_arrival`;
@@ -54,9 +52,6 @@ CREATE TABLE `ia_arrival` (
 --
 -- Estructura de tabla para la tabla `ia_category`
 --
--- Creación: 07-02-2020 a las 21:04:07
--- Última actualización: 23-03-2020 a las 18:53:43
---
 
 DROP TABLE IF EXISTS `ia_category`;
 CREATE TABLE `ia_category` (
@@ -79,8 +74,6 @@ INSERT INTO `ia_category` (`category_id`, `description_c`, `add_timestamp`, `sta
 --
 -- Estructura de tabla para la tabla `ia_classify`
 --
--- Creación: 07-02-2020 a las 21:04:07
---
 
 DROP TABLE IF EXISTS `ia_classify`;
 CREATE TABLE `ia_classify` (
@@ -102,8 +95,6 @@ CREATE TABLE `ia_classify` (
 
 --
 -- Estructura de tabla para la tabla `ia_clone_arrival`
---
--- Creación: 17-03-2020 a las 16:24:04
 --
 
 DROP TABLE IF EXISTS `ia_clone_arrival`;
@@ -128,10 +119,61 @@ CREATE TABLE `ia_clone_arrival` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `ia_employee`
+-- Estructura de tabla para la tabla `ia_destiny`
 --
--- Creación: 17-03-2020 a las 16:24:04
--- Última actualización: 23-03-2020 a las 18:07:48
+
+DROP TABLE IF EXISTS `ia_destiny`;
+CREATE TABLE `ia_destiny` (
+  `destiny_id` int(10) UNSIGNED NOT NULL,
+  `description_d` text NOT NULL,
+  `type_destare` enum('0','1') DEFAULT '0',
+  `destare` float UNSIGNED DEFAULT NULL,
+  `street` text DEFAULT NULL,
+  `numint` varchar(10) DEFAULT NULL,
+  `numext` varchar(10) DEFAULT NULL,
+  `local` text DEFAULT NULL,
+  `muni` text DEFAULT NULL,
+  `state` text DEFAULT NULL,
+  `postal_code` varchar(5) DEFAULT NULL,
+  `status` enum('0','1') NOT NULL DEFAULT '1',
+  `add_timestamp` timestamp NOT NULL DEFAULT current_timestamp(),
+  `user_id` int(10) UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ia_driver`
+--
+
+DROP TABLE IF EXISTS `ia_driver`;
+CREATE TABLE `ia_driver` (
+  `driver_id` int(10) UNSIGNED NOT NULL,
+  `sheet_licence` text NOT NULL,
+  `type_licence` text NOT NULL,
+  `experiencie_drive` varchar(5) DEFAULT NULL,
+  `name` text NOT NULL,
+  `ap1` text NOT NULL,
+  `ap2` text NOT NULL,
+  `street` text DEFAULT NULL,
+  `numint` varchar(10) DEFAULT NULL,
+  `numext` varchar(10) DEFAULT NULL,
+  `local` text DEFAULT NULL,
+  `muni` text DEFAULT NULL,
+  `state` text DEFAULT NULL,
+  `postal_code` varchar(5) DEFAULT NULL,
+  `phone` text DEFAULT NULL,
+  `mobile_phone` text DEFAULT NULL,
+  `email` text DEFAULT NULL,
+  `status` enum('0','1') NOT NULL DEFAULT '1',
+  `add_timestamp` timestamp NOT NULL DEFAULT current_timestamp(),
+  `user_id` int(10) UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ia_employee`
 --
 
 DROP TABLE IF EXISTS `ia_employee`;
@@ -165,15 +207,13 @@ CREATE TABLE `ia_employee` (
 --
 
 INSERT INTO `ia_employee` (`id_employee`, `curp_employee`, `name_employee`, `ap1_employee`, `ap2_employee`, `street_employee`, `numint_employee`, `numext_employee`, `local_employee`, `muni_employee`, `state_employee`, `postalcode_employee`, `phone_employee`, `cel_employee`, `email_employee`, `drivercandidate_employee`, `typelicence_employee`, `sheetlicence_employee`, `experieciedrive_employee`, `register_employee`, `status_employee`, `iduser_employee`) VALUES
-(1, 'CASJ970224HMCMNS09', 'JOSÉ DE JESÚS', 'CAMACHO', 'SÁNCHEZ', 'CALLE DEL SOL', '0', '0', 'TENANCINGO', 'TENANCINGO', 'MÉXICO', '52400', '7226351114', '7226351114', 'jesus@gmail.com', '0', '', '', '', '2020-03-23 18:04:08', '1', 1),
-(2, 'DIBS971108MMCZST00', 'SELENE YADIRA', 'DIAZ', 'BUSTOS', 'DE LAS FLORES', '2', '234', 'TENANCINGO', 'TENANCINGO', 'MÉXICO', '52400', '7288282828', '7288282820', 'selene@yahoo.com', '1', 'tipo a', 'F-90L233F', '2', '2020-03-23 18:07:09', '1', 1);
+(1, 'CASJ970224HMCMNS09', 'JOSÉ DE JESÚS', 'CAMACHO', 'SÁNCHEZ', 'CALLE DEL SOL', '0', '0', 'TENANCINGO', 'TENANCINGO', 'México', '52400', '7226351114', '7226351114', 'jesus@gmail.com', '0', '', '', '', '2020-03-23 18:04:08', '1', 1),
+(2, 'DIBS971108MMCZST00', 'SELENE YADIRA', 'DIAZ', 'BUSTOS', 'DE LAS FLORES', '2', '234', 'TENANCINGO', 'TENANCINGO', 'México', '52400', '7288282828', '7288282820', 'selene@yahoo.com', '1', 'tipo a', 'F-12UJS', '2', '2020-03-23 18:07:09', '1', 1);
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `ia_origin`
---
--- Creación: 17-03-2020 a las 16:24:04
 --
 
 DROP TABLE IF EXISTS `ia_origin`;
@@ -192,8 +232,6 @@ CREATE TABLE `ia_origin` (
 --
 -- Estructura de tabla para la tabla `ia_price`
 --
--- Creación: 17-03-2020 a las 16:24:04
---
 
 DROP TABLE IF EXISTS `ia_price`;
 CREATE TABLE `ia_price` (
@@ -210,8 +248,6 @@ CREATE TABLE `ia_price` (
 
 --
 -- Estructura de tabla para la tabla `ia_producer`
---
--- Creación: 17-03-2020 a las 16:24:04
 --
 
 DROP TABLE IF EXISTS `ia_producer`;
@@ -245,9 +281,6 @@ CREATE TABLE `ia_producer` (
 --
 -- Estructura de tabla para la tabla `ia_product`
 --
--- Creación: 17-03-2020 a las 16:24:04
--- Última actualización: 23-03-2020 a las 18:16:16
---
 
 DROP TABLE IF EXISTS `ia_product`;
 CREATE TABLE `ia_product` (
@@ -267,9 +300,6 @@ CREATE TABLE `ia_product` (
 --
 -- Estructura de tabla para la tabla `ia_product_size`
 --
--- Creación: 17-03-2020 a las 16:24:04
--- Última actualización: 23-03-2020 a las 18:16:39
---
 
 DROP TABLE IF EXISTS `ia_product_size`;
 CREATE TABLE `ia_product_size` (
@@ -286,9 +316,6 @@ CREATE TABLE `ia_product_size` (
 
 --
 -- Estructura de tabla para la tabla `ia_profile`
---
--- Creación: 17-03-2020 a las 16:24:04
--- Última actualización: 23-03-2020 a las 18:02:02
 --
 
 DROP TABLE IF EXISTS `ia_profile`;
@@ -319,9 +346,6 @@ INSERT INTO `ia_profile` (`id_profile`, `describe_profile`, `character_profile`,
 --
 -- Estructura de tabla para la tabla `ia_quality`
 --
--- Creación: 17-03-2020 a las 16:24:04
--- Última actualización: 23-03-2020 a las 18:54:36
---
 
 DROP TABLE IF EXISTS `ia_quality`;
 CREATE TABLE `ia_quality` (
@@ -344,9 +368,6 @@ INSERT INTO `ia_quality` (`quality_id`, `description_q`, `add_timestamp`, `statu
 --
 -- Estructura de tabla para la tabla `ia_size_box`
 --
--- Creación: 17-03-2020 a las 16:24:04
--- Última actualización: 23-03-2020 a las 18:09:26
---
 
 DROP TABLE IF EXISTS `ia_size_box`;
 CREATE TABLE `ia_size_box` (
@@ -363,8 +384,6 @@ CREATE TABLE `ia_size_box` (
 
 --
 -- Estructura de tabla para la tabla `ia_states`
---
--- Creación: 17-03-2020 a las 16:24:04
 --
 
 DROP TABLE IF EXISTS `ia_states`;
@@ -421,8 +440,6 @@ INSERT INTO `ia_states` (`id`, `inegi_id`, `name`, `abrev`, `status`, `add_times
 --
 -- Estructura de tabla para la tabla `ia_supply`
 --
--- Creación: 17-03-2020 a las 16:24:04
---
 
 DROP TABLE IF EXISTS `ia_supply`;
 CREATE TABLE `ia_supply` (
@@ -438,9 +455,6 @@ CREATE TABLE `ia_supply` (
 
 --
 -- Estructura de tabla para la tabla `ia_users`
---
--- Creación: 17-03-2020 a las 16:24:04
--- Última actualización: 23-03-2020 a las 18:07:48
 --
 
 DROP TABLE IF EXISTS `ia_users`;
@@ -462,6 +476,38 @@ CREATE TABLE `ia_users` (
 INSERT INTO `ia_users` (`id_users`, `username_users`, `userpass_users`, `employee_users`, `profile_users`, `register_users`, `status_users`, `iduser_users`) VALUES
 (1, 'admin', '1234567890', 1, 1, '2020-03-23 18:04:08', '1', 1),
 (2, 'selene', '1234567890', 2, 1, '2020-03-23 18:07:10', '1', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ia_vehicle`
+--
+
+DROP TABLE IF EXISTS `ia_vehicle`;
+CREATE TABLE `ia_vehicle` (
+  `vehicle_id` int(10) UNSIGNED NOT NULL,
+  `key_v` text DEFAULT NULL,
+  `description_v` text DEFAULT NULL,
+  `vehicle_type` int(10) UNSIGNED NOT NULL,
+  `add_timestamp` timestamp NOT NULL DEFAULT current_timestamp(),
+  `status_v` enum('0','1') NOT NULL DEFAULT '1',
+  `user_id` int(10) UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ia_vehicle_type`
+--
+
+DROP TABLE IF EXISTS `ia_vehicle_type`;
+CREATE TABLE `ia_vehicle_type` (
+  `vt_id` int(10) UNSIGNED NOT NULL,
+  `description_vt` text DEFAULT NULL,
+  `add_timestamp` timestamp NOT NULL DEFAULT current_timestamp(),
+  `status` enum('0','1') NOT NULL DEFAULT '1',
+  `user_id` int(10) UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Índices para tablas volcadas
@@ -490,6 +536,18 @@ ALTER TABLE `ia_classify`
 --
 ALTER TABLE `ia_clone_arrival`
   ADD PRIMARY KEY (`id_arrival`);
+
+--
+-- Indices de la tabla `ia_destiny`
+--
+ALTER TABLE `ia_destiny`
+  ADD PRIMARY KEY (`destiny_id`);
+
+--
+-- Indices de la tabla `ia_driver`
+--
+ALTER TABLE `ia_driver`
+  ADD PRIMARY KEY (`driver_id`);
 
 --
 -- Indices de la tabla `ia_employee`
@@ -564,6 +622,18 @@ ALTER TABLE `ia_users`
   ADD PRIMARY KEY (`id_users`);
 
 --
+-- Indices de la tabla `ia_vehicle`
+--
+ALTER TABLE `ia_vehicle`
+  ADD PRIMARY KEY (`vehicle_id`);
+
+--
+-- Indices de la tabla `ia_vehicle_type`
+--
+ALTER TABLE `ia_vehicle_type`
+  ADD PRIMARY KEY (`vt_id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -577,7 +647,7 @@ ALTER TABLE `ia_arrival`
 -- AUTO_INCREMENT de la tabla `ia_category`
 --
 ALTER TABLE `ia_category`
-  MODIFY `category_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `category_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `ia_classify`
@@ -590,6 +660,18 @@ ALTER TABLE `ia_classify`
 --
 ALTER TABLE `ia_clone_arrival`
   MODIFY `id_arrival` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `ia_destiny`
+--
+ALTER TABLE `ia_destiny`
+  MODIFY `destiny_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `ia_driver`
+--
+ALTER TABLE `ia_driver`
+  MODIFY `driver_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `ia_employee`
@@ -637,7 +719,7 @@ ALTER TABLE `ia_profile`
 -- AUTO_INCREMENT de la tabla `ia_quality`
 --
 ALTER TABLE `ia_quality`
-  MODIFY `quality_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `quality_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `ia_size_box`
@@ -662,6 +744,18 @@ ALTER TABLE `ia_supply`
 --
 ALTER TABLE `ia_users`
   MODIFY `id_users` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `ia_vehicle`
+--
+ALTER TABLE `ia_vehicle`
+  MODIFY `vehicle_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `ia_vehicle_type`
+--
+ALTER TABLE `ia_vehicle_type`
+  MODIFY `vt_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
