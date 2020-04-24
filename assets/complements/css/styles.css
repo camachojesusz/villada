@@ -1,0 +1,51 @@
+
+.color-asterisk-required{
+	/*
+	*Alerta de campos obligatorios
+	*/
+	color: #CB4335;
+}
+
+.color-exclamation-sign-a{
+	/*
+	*Vinieta de ayuda
+	*/
+	color: #2E86C1;
+}
+
+.color-exclamation-sign-b{
+	/*
+	*Vinieta de ayuda
+	*/
+	color: #F1C40F;
+}
+
+.color-exclamation-sign-c{
+	/*
+	*Vinieta de ayuda
+	*/
+	color: #DC7633;
+}
+
+.color-exclamation-sign-d{
+	/*
+	*Vinieta de ayuda
+	*/
+	color: #A569BD;
+}
+
+.color-search-table{
+	/*
+	*Vinieta de ayuda
+	*/
+	color: #2E86C1;
+}
+
+.color-box-buy{
+	background: #EAECEE;
+}
+
+.seccion{
+	padding-top: 50px;
+	background: #EAECEE;
+}

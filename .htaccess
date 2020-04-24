@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /villada_c/
+  RewriteCond $1 !^(index\.php|assets|js|files|robots\.txt|css)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.php?/$1 [L]
+</IfModule>
