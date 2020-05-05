@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-04-2020 a las 05:14:12
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.4
+-- Tiempo de generación: 03-05-2020 a las 03:33:23
+-- Versión del servidor: 10.3.16-MariaDB
+-- Versión de PHP: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -26,7 +27,7 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `ia_arrival`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_arrival`;
@@ -53,7 +54,7 @@ CREATE TABLE `ia_arrival` (
 --
 -- Estructura de tabla para la tabla `ia_category`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_category`;
@@ -77,7 +78,7 @@ INSERT INTO `ia_category` (`category_id`, `description_c`, `add_timestamp`, `sta
 --
 -- Estructura de tabla para la tabla `ia_classify`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_classify`;
@@ -101,7 +102,7 @@ CREATE TABLE `ia_classify` (
 --
 -- Estructura de tabla para la tabla `ia_clone_arrival`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_clone_arrival`;
@@ -128,13 +129,15 @@ CREATE TABLE `ia_clone_arrival` (
 --
 -- Estructura de tabla para la tabla `ia_departure`
 --
--- Creación: 23-04-2020 a las 03:02:47
+-- Creación: 01-05-2020 a las 22:39:28
+-- Última actualización: 03-05-2020 a las 00:34:59
 --
 
 DROP TABLE IF EXISTS `ia_departure`;
 CREATE TABLE `ia_departure` (
   `departure_id` int(10) UNSIGNED NOT NULL,
-  `sheet_arrival` text DEFAULT NULL,
+  `sheet_departure` text DEFAULT NULL,
+  `plan_date` date NOT NULL,
   `destiny_id` int(10) UNSIGNED NOT NULL,
   `vehicle_id` int(10) UNSIGNED NOT NULL,
   `driver_id` int(10) UNSIGNED NOT NULL,
@@ -149,7 +152,7 @@ CREATE TABLE `ia_departure` (
 --
 -- Estructura de tabla para la tabla `ia_dep_specific`
 --
--- Creación: 23-04-2020 a las 03:03:45
+-- Creación: 23-04-2020 a las 22:40:40
 --
 
 DROP TABLE IF EXISTS `ia_dep_specific`;
@@ -167,7 +170,7 @@ CREATE TABLE `ia_dep_specific` (
 --
 -- Estructura de tabla para la tabla `ia_destiny`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_destiny`;
@@ -193,7 +196,7 @@ CREATE TABLE `ia_destiny` (
 --
 -- Estructura de tabla para la tabla `ia_driver`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_driver`;
@@ -225,7 +228,7 @@ CREATE TABLE `ia_driver` (
 --
 -- Estructura de tabla para la tabla `ia_employee`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_employee`;
@@ -254,12 +257,20 @@ CREATE TABLE `ia_employee` (
   `iduser_employee` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `ia_employee`
+--
+
+INSERT INTO `ia_employee` (`id_employee`, `curp_employee`, `name_employee`, `ap1_employee`, `ap2_employee`, `street_employee`, `numint_employee`, `numext_employee`, `local_employee`, `muni_employee`, `state_employee`, `postalcode_employee`, `phone_employee`, `cel_employee`, `email_employee`, `drivercandidate_employee`, `typelicence_employee`, `sheetlicence_employee`, `experieciedrive_employee`, `register_employee`, `status_employee`, `iduser_employee`) VALUES
+(1, 'CASJ970224HMCMNS09', 'JOSÉ DE JESÚS', 'CAMACHO', 'SÁNCHEZ', 'CALLE DEL SOL', '0', '0', 'TENANCINGO', 'TENANCINGO', 'México', '52400', '7226351114', '7226351114', 'jesus@gmail.com', '0', '', '', '', '2020-03-23 18:04:08', '1', 1),
+(2, 'DIBS971108MMCZST00', 'SELENE YADIRA', 'DIAZ', 'BUSTOS', 'DE LAS FLORES', '2', '234', 'TENANCINGO', 'TENANCINGO', 'México', '52400', '7288282828', '7288282820', 'selene@yahoo.com', '1', 'tipo a', 'F-12UJS', '2', '2020-03-23 18:07:09', '1', 1);
+
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `ia_origin`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_origin`;
@@ -278,7 +289,7 @@ CREATE TABLE `ia_origin` (
 --
 -- Estructura de tabla para la tabla `ia_price`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_price`;
@@ -297,7 +308,7 @@ CREATE TABLE `ia_price` (
 --
 -- Estructura de tabla para la tabla `ia_producer`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_producer`;
@@ -331,7 +342,7 @@ CREATE TABLE `ia_producer` (
 --
 -- Estructura de tabla para la tabla `ia_product`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_product`;
@@ -352,7 +363,7 @@ CREATE TABLE `ia_product` (
 --
 -- Estructura de tabla para la tabla `ia_product_size`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_product_size`;
@@ -371,7 +382,7 @@ CREATE TABLE `ia_product_size` (
 --
 -- Estructura de tabla para la tabla `ia_profile`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_profile`;
@@ -402,7 +413,7 @@ INSERT INTO `ia_profile` (`id_profile`, `describe_profile`, `character_profile`,
 --
 -- Estructura de tabla para la tabla `ia_quality`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_quality`;
@@ -426,7 +437,7 @@ INSERT INTO `ia_quality` (`quality_id`, `description_q`, `add_timestamp`, `statu
 --
 -- Estructura de tabla para la tabla `ia_size_box`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_size_box`;
@@ -445,7 +456,7 @@ CREATE TABLE `ia_size_box` (
 --
 -- Estructura de tabla para la tabla `ia_specification_dep`
 --
--- Creación: 23-04-2020 a las 03:03:12
+-- Creación: 23-04-2020 a las 22:40:41
 --
 
 DROP TABLE IF EXISTS `ia_specification_dep`;
@@ -468,7 +479,7 @@ CREATE TABLE `ia_specification_dep` (
 --
 -- Estructura de tabla para la tabla `ia_states`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_states`;
@@ -525,7 +536,7 @@ INSERT INTO `ia_states` (`id`, `inegi_id`, `name`, `abrev`, `status`, `add_times
 --
 -- Estructura de tabla para la tabla `ia_supply`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_supply`;
@@ -543,7 +554,7 @@ CREATE TABLE `ia_supply` (
 --
 -- Estructura de tabla para la tabla `ia_users`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_users`;
@@ -571,7 +582,7 @@ INSERT INTO `ia_users` (`id_users`, `username_users`, `userpass_users`, `employe
 --
 -- Estructura de tabla para la tabla `ia_vehicle`
 --
--- Creación: 22-04-2020 a las 16:08:23
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_vehicle`;
@@ -590,7 +601,7 @@ CREATE TABLE `ia_vehicle` (
 --
 -- Estructura de tabla para la tabla `ia_vehicle_type`
 --
--- Creación: 19-04-2020 a las 00:37:14
+-- Creación: 23-04-2020 a las 22:37:11
 --
 
 DROP TABLE IF EXISTS `ia_vehicle_type`;
@@ -800,7 +811,7 @@ ALTER TABLE `ia_driver`
 -- AUTO_INCREMENT de la tabla `ia_employee`
 --
 ALTER TABLE `ia_employee`
-  MODIFY `id_employee` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_employee` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `ia_origin`

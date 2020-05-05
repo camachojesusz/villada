@@ -38,12 +38,12 @@
                         <sup><li class="fa fa-asterisk color-asterisk-required"></li></sup> Campos requeridos
                      </p>
                   </div>
-                  <div class="modal-footer">
-                     <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
-                     <button type="button submit" class="btn btn-success btn-sm" name="btnsend">Guardar <samp class="glyphicon glyphicon-floppy-disk"></samp></button>
-                  </div>
-               <?php echo form_close(); ?>
                </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
+                  <button type="button submit" class="btn btn-success btn-sm" name="btnsend">Guardar <samp class="glyphicon glyphicon-floppy-disk"></samp></button>
+               </div>
+               <?php echo form_close(); ?>
             </div>
          </div>
       </div>

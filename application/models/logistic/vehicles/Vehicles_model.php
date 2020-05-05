@@ -18,7 +18,7 @@ class Vehicles_model extends CI_Model
       {
          $this->db->where('vehicle_id', $id);
       }
-      $this->db->where('status', '1');
+      $this->db->where('status_v', '1');
       return $this->db->get($this->table_vehicle);
    }
 

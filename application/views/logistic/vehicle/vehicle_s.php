@@ -21,45 +21,61 @@
                     <h3 class="modal-title">Nuevo <small class="lead">Vehículo</small></h3>
                </div>
                <div class="modal-body row">
-                 <div class="col-xs-12">
-                    <div class="form-group">
-                      <input class="form-control" type="hidden" id="txtsender" name="txtsender" value="0">
-                      <input class="form-control" type="hidden" id="auxiliar_sender" name="auxiliar_sender" value="1">
-                    </div>
-                 </div>
-                 <div class="col-xs-12">
-                    <div class="form-group">
-                      <label for=""><sup><li class="fa fa-asterisk color-asterisk-required"></li></sup> Placa o Matrícula</label>
-                      <input required class="form-control" type="text" id="key_v" name="key_v" placeholder="placa o matrícula" value="<?php if (isset($auto_complete) && ! empty($auto_complete)) { echo $auto_complete['key_v']; } ?>">
-                    </div>
-                 </div>
-                 <div class="col-xs-12">
-                    <div class="form-group">
-                      <label for=""><sup><li class="fa fa-asterisk color-asterisk-required"></li></sup> Descripción</label>
-                      <input required class="form-control" type="text" id="txtdescription_v" name="txtdescription_v" placeholder="descripción" value="<?php if (isset($auto_complete) && ! empty($auto_complete)) { echo $auto_complete['description_v']; } ?>">
-                    </div>
-                 </div>
-                 <div class="col-xs-12">
-                    <div class="form-group">
-                      <label for=""><li class="fa fa-exclamation-circle color-exclamation-sign-b"></li>&nbsp;<sup><li class="fa fa-asterisk color-asterisk-required"></li></sup>Tipo de vehículo</label><br>
-                      <?php echo form_dropdown('txtvehicle_type', $vt, set_value('txtvehicle_type', '-1'), 'class="form-control select2" weight="100%"'); ?>
-                    </div>
-                 </div>
-                <div class="col-xs-12">
-                   <p class="help-block">
-                     <sup><li class="fa fa-asterisk color-asterisk-required"></li></sup> Campos requeridos
-                  </p>
+                  <div class="col-xs-12">
+                     <div class="form-group">
+                        <input class="form-control" type="hidden" id="txtsender" name="txtsender" value="0">
+                        <input class="form-control" type="hidden" id="auxiliar_sender" name="auxiliar_sender" value="1">
+                     </div>
+                  </div>
+                  <div class="col-xs-12">
+                     <div class="form-group">
+                        <label for=""><sup><li class="fa fa-asterisk color-asterisk-required"></li></sup> Placa o Matrícula</label>
+                        <input required class="form-control" type="text" id="key_v" name="key_v" placeholder="placa o matrícula" value="<?php if (isset($auto_complete) && ! empty($auto_complete)) { echo $auto_complete['key_v']; } ?>">
+                     </div>
+                  </div>
+                  <div class="col-xs-12">
+                     <div class="form-group">
+                        <label for=""><sup><li class="fa fa-asterisk color-asterisk-required"></li></sup> Descripción</label>
+                        <input required class="form-control" type="text" id="txtdescription_v" name="txtdescription_v" placeholder="descripción" value="<?php if (isset($auto_complete) && ! empty($auto_complete)) { echo $auto_complete['description_v']; } ?>">
+                     </div>
+                  </div>
+                  <div class="col-xs-12">
+                     <div class="form-group">
+                        <label for=""><li class="fa fa-exclamation-circle color-exclamation-sign-b"></li>&nbsp;<sup><li class="fa fa-asterisk color-asterisk-required"></li></sup>Tipo de vehículo</label><br>
+                        <?php echo form_dropdown('txtvehicle_type', $vt, set_value('txtvehicle_type', '-1'), 'class="form-control select2" required'); ?>
+                     </div>
+                  </div>
+                  <div class="col-xs-12">
+                     <p class="help-block">
+                        <sup><li class="fa fa-asterisk color-asterisk-required"></li></sup> Campos requeridos
+                        <br>
+                        <li class="fa fa-exclamation-circle color-exclamation-sign-b"></li> Elige un tipo de vehículo
+                     </p>
+                  </div>
                </div>
                <div class="modal-footer">
                   <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
                   <button type="button submit" class="btn btn-success btn-sm" name="btnsend">Guardar <samp class="glyphicon glyphicon-floppy-disk"></samp></button>
                </div>
                <?php echo form_close(); ?>
-               </div>
             </div>
          </div>
       </div>
       <div class="row">
+         <?php if (validation_errors()): ?>
+           <div class="col-xs-12">
+               <br>
+               <div class="callout callout-danger">
+                  <h4>¡Error!</h4>
+                  <p class="">
+                     <ul>
+                        <?php echo validation_errors(); ?>
+                     </ul>
+                  </p>
+                  <p>Por favor verifíca los datos e inténtalo de nuevo.</p>
+               </div>
+           </div>
+         <?php endif; ?>
          <?php if (isset($vehicle) && ! empty($vehicle)): ?>
             <div class="col-xs-12">
                <div class="box box-primary">
@@ -175,12 +191,12 @@
                                                       <sup><li class="fa fa-asterisk color-asterisk-required"></li></sup> Campos requeridos
                                                    </p>
                                                 </div>
+                                                </div>
                                                 <div class="modal-footer">
                                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
                                                    <button type="button submit" class="btn btn-success btn-sm" name="btnsend">Guardar <samp class="glyphicon glyphicon-floppy-disk"></samp></button>
                                                 </div>
                                                 <?php echo form_close(); ?>
-                                                </div>
                                              </div>
                                           </div>
                                        </div>
@@ -226,7 +242,6 @@
                                                 <div class="modal-footer">
                                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar <span class="glyphicon glyphicon-remove"></span></button>
                                                    <?php echo anchor('logistic/vehicle/status/1/'.$vehicles->status.'/'.$vehicles->vehicle_id, 'Continuar <i class="fa fa-check"></i>', 'type="button" class="btn btn-sm btn-success"'); ?>
-
                                                 </div>
                                                 <?php echo form_close(); ?>
                                                 </div>

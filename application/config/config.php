@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'https://url';
-$config['base_url'] = (ENVIRONMENT !== 'production') ? 'http://localhost:100/villada/' : $config['base_url'];
+$config['base_url'] = (ENVIRONMENT !== 'production') ? 'http://localhost/villada/' : $config['base_url'];
 
 /*
 |--------------------------------------------------------------------------

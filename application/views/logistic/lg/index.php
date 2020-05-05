@@ -26,6 +26,7 @@
                         <?php echo anchor('logistic/driver/', '<i class="fa fa-user"></i> Conductores</a>', 'class="list-group-item" type="button"'); ?>
                         <?php echo anchor('logistic/vehicle/', '<i class="fa fa-truck"></i> Vehículos</a>', 'class="list-group-item" type="button"'); ?>
                         <?php echo anchor('logistic/destiny/', '<i class="fa fa-map-marker"></i> Destinos</a>', 'class="list-group-item" type="button"'); ?>
+                        <?php echo anchor('logistic/departure', '<i class="fa fa-paper-plane-o"></i> Salidas</a>', 'class="list-group-item" type="button"'); ?>
                      </div>
                   </div>
                </div>
@@ -80,7 +81,7 @@
                   </div>
                   <div class="box-footer clearfix">
                      <p class="text-right">
-                        <?php echo anchor('logistic/logistic_index_index', 'Ver todas <i class="fa fa-eye"></i>', 'type="button" class="btn btn-sm btn-info"'); ?>
+                        <?php echo anchor('logistic/departure', 'Ver todas <i class="fa fa-eye"></i>', 'title="Ir a Salidas" type="button" class="btn btn-sm btn-info"'); ?>
                      </p>
                   </div>
                </div>
