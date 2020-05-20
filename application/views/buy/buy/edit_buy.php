@@ -106,7 +106,7 @@
                                        <div class="input-group">
                                           <div class="input-group-addon">
                                              <label for="txtctrldestare_b">
-                                                <input type="radio" id="txtctrldestare_b" name="txtctrldestare" value="1" required <?php if($avl->type_destare === '1'){ echo "checked"; } ?> >
+                                                <input type="radio" id="txtctrldestare_b" name="txtctrldestare" value="1" required <?php if($avl->type_destare === '1'){ echo "checked"; } ?>>
                                                 Manual
                                              </label>
                                           </div>

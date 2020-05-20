@@ -1,4 +1,3 @@
-<?php //$this->load->view('logistic/header'); ?>
 <?php $this->load->view('header'); ?>
    <section class="seccion">
       <div class="col-xs-1"></div>
@@ -61,11 +60,11 @@
                                     <div class="input-group">
                                        <div class="input-group-addon">
                                           <label for="txtctrldestare_a">
-                                             <input checked type="radio" id="txtctrldestare_a" name="txtctrldestare" value="0" required>
+                                             <input type="radio" id="txtctrldestare_a" name="txtctrldestare" value="0" required <?php if($destiny->row()->type_destare === '0'){ echo "checked"; $_activate = ''; } else { $_activate = ' disabled'; } ?>>
                                              Automático
                                           </label>
                                        </div>
-                                       <?php echo form_dropdown('txtsizebox', (empty($size_box)) ? '' : $size_box, set_value('txtsizebox', $destiny->row()->destare), 'class="form-control select2" id="txtsizebox"'); ?>
+                                       <?php echo form_dropdown('txtsizebox', (empty($size_box)) ? '' : $size_box, set_value('txtsizebox', $destiny->row()->destare), 'class="form-control select2" id="txtsizebox"'.$_activate); ?>
                                     </div>
                                  </div>
                               </div>
@@ -75,11 +74,11 @@
                                     <div class="input-group">
                                        <div class="input-group-addon">
                                           <label for="txtctrldestare_b">
-                                             <input type="radio" id="txtctrldestare_b" name="txtctrldestare" value="1" required>
+                                             <input type="radio" id="txtctrldestare_b" name="txtctrldestare" value="1" required <?php echo ($destiny->row()->type_destare === '1') ? 'checked' : '' ; ?>>
                                              Manual
                                           </label>
                                        </div>
-                                       <input class="form-control" type="tel" min="0" id="txtvaldestare" name="txtvaldestare" value="<?php echo ($destiny->row()->type_destare === '0') ? '' : $destiny->row()->destare; ?>" placeholder="calcular destare manualmente" title="calcular destare manualmente" disabled="true">
+                                       <input class="form-control" type="tel" min="0" id="txtvaldestare" name="txtvaldestare" <?php echo ($destiny->row()->type_destare === '1') ? 'value="'.$destiny->row()->destare.'" ' : 'disabled="true" ' ; ?> placeholder="calcular destare manualmente" title="calcular destare manualmente">
                                     </div>
                                  </div>
                               </div>
@@ -175,4 +174,4 @@
       <div class="col-xs-1"></div>
    </section>
 <?php $this->load->view('footer');?>
-<script src="<?php echo base_url(); ?>assets/complements/js/calculate_destare.js"></script>
+<script src="<?php echo base_url(); ?>assets/complements/js/destare_destiny.js"></script>

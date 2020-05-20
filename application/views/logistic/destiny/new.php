@@ -64,7 +64,7 @@
                                              Automático
                                           </label>
                                        </div>
-                                       <?php echo form_dropdown('txtsizebox', (empty($size_box)) ? '' : $size_box, set_value('txtsizebox', (isset($auto_complete) && $auto_complete['type_destare'] === '0') ? 'checked' : '-1' ), 'class="form-control select2" id="txtsizebox"'); ?>
+                                       <?php echo form_dropdown('txtsizebox', (empty($size_box)) ? '' : $size_box, set_value('txtsizebox', '-1'), 'class="form-control select2" id="txtsizebox"'); ?>
                                     </div>
                                  </div>
                               </div>
@@ -78,7 +78,7 @@
                                              Manual
                                           </label>
                                        </div>
-                                       <input class="form-control" type="tel" min="0" id="txtvaldestare" name="txtvaldestare" placeholder="calcular destare manualmente" title="calcular destare manualmente" disabled="<?php echo (isset($auto_complete) && $auto_complete['type_destare'] === '1') ? 'false' : 'true' ; ?>" value="<?php echo (isset($auto_complete) && $auto_complete['type_destare'] === '1') ? $auto_complete['destare'] : '' ; ?>">
+                                       <input class="form-control" type="tel" min="0" id="txtvaldestare" name="txtvaldestare" placeholder="calcular destare manualmente" title="calcular destare manualmente">
                                     </div>
                                  </div>
                               </div>
@@ -174,4 +174,4 @@
       <div class="col-xs-1"></div>
    </section>
 <?php $this->load->view('footer');?>
-<script src="<?php echo base_url(); ?>assets/complements/js/calculate_destare.js"></script>
+<script src="<?php echo base_url(); ?>assets/complements/js/destare_destiny.js"></script>
