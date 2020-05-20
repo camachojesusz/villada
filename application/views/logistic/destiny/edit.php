@@ -89,7 +89,7 @@
                         <p class="help-block">
                            <sup><li class="fa fa-asterisk color-asterisk-required"></li></sup>Campos obligatorios
                            <br>
-                           <li class="fa fa-exclamation-circle color-exclamation-sign-b"></li>&nbsp;Seleccione un tipo de caja para calular el destare durante las ventas en este destino
+                           <li class="fa fa-exclamation-circle color-exclamation-sign-b"></li>&nbsp;Seleccione un tipo y valor de destare para calcular durante las ventas en este destino
                         </p>
                      </div>
                   </div>

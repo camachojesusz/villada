@@ -186,8 +186,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          $this->load->library('form_validation');
          $this->form_validation->set_rules('txtsender', 'Procedimiento', 'numeric', ['numeric' => 'Error de <b>%s</b>']);
          $this->form_validation->set_rules('txtplan_date', 'Fecha estimada', 'required', ['required' => 'Campo requerido <b>%s</b>']);
-         $this->form_validation->set_rules('txtdestiny_id', 'Destino', 'required|integer', ['required' => 'Campo requerido <b>%s</b>', 'integer' => 'Formato inválido en: <b>%s</b>']);
-         $this->form_validation->set_rules('txtvehicle_id', 'Vehículo', 'required|integer', ['required' => 'Campo requerido <b>%s</b>', 'integer' => 'Formato inválido en: <b>%s</b>']);
+         $this->form_validation->set_rules('txtdestiny_id', 'Destino', 'required|integer|is_natural', ['required' => 'Campo requerido <b>%s</b>', 'integer' => 'Formato inválido en: <b>%s</b>', 'is_natural' => 'Campo requerido <b>%s</b>']);
+         $this->form_validation->set_rules('txtvehicle_id', 'Vehículo', 'required|integer|is_natural', ['required' => 'Campo requerido <b>%s</b>', 'integer' => 'Formato inválido en: <b>%s</b>', 'is_natural' => 'Campo requerido <b>%s</b>']);
          $this->form_validation->set_rules('txt_ctrl_driver', 'Conductor', 'required|integer', ['required' => 'Campo requerido <b>%s</b>', 'integer' => 'Formato inválido en: <b>%s</b>']);
          if ($config_rules['type_driver'] === '0')
          {

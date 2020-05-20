@@ -60,11 +60,11 @@
                                     <div class="input-group">
                                        <div class="input-group-addon">
                                           <label for="txtctrldestare_a">
-                                             <input checked type="radio" id="txtctrldestare_a" name="txtctrldestare" value="0" required <?php echo (isset($auto_complete) && $auto_complete['type_destare'] === '0') ? 'checked' : '' ; ?>>
+                                             <input type="radio" id="txtctrldestare_a" name="txtctrldestare" value="0" required checked <?php if (isset($auto_complete['type_destare']) && $auto_complete['type_destare'] === '0') { echo "checked"; }?>>
                                              Automático
                                           </label>
                                        </div>
-                                       <?php echo form_dropdown('txtsizebox', (empty($size_box)) ? '' : $size_box, set_value('txtsizebox', '-1'), 'class="form-control select2" id="txtsizebox"'); ?>
+                                       <?php echo form_dropdown('txtsizebox', (empty($size_box)) ? '' : $size_box, set_value('txtsizebox', '-1'), 'class="form-control select2" id="txtsizebox" '.((isset($auto_complete['type_destare']) && $auto_complete['type_destare'] === '1') ? 'disabled' : '')); ?>
                                     </div>
                                  </div>
                               </div>
@@ -74,11 +74,11 @@
                                     <div class="input-group">
                                        <div class="input-group-addon">
                                           <label for="txtctrldestare_b">
-                                             <input type="radio" id="txtctrldestare_b" name="txtctrldestare" value="1" required <?php echo (isset($auto_complete) && $auto_complete['type_destare'] === '1') ? 'checked' : '' ; ?>>
+                                             <input type="radio" id="txtctrldestare_b" name="txtctrldestare" value="1" required <?php if (isset($auto_complete['type_destare']) && $auto_complete['type_destare'] === '1') { echo "checked"; $_activate = ''; } else { $_activate = ' disabled'; } ?>>
                                              Manual
                                           </label>
                                        </div>
-                                       <input class="form-control" type="tel" min="0" id="txtvaldestare" name="txtvaldestare" placeholder="calcular destare manualmente" title="calcular destare manualmente">
+                                       <input class="form-control" type="tel" min="0" id="txtvaldestare" name="txtvaldestare" placeholder="calcular destare manualmente" title="calcular destare manualmente" <?php echo $_activate; ?>>
                                     </div>
                                  </div>
                               </div>
@@ -89,7 +89,7 @@
                         <p class="help-block">
                            <sup><li class="fa fa-asterisk color-asterisk-required"></li></sup>Campos obligatorios
                            <br>
-                           <li class="fa fa-exclamation-circle color-exclamation-sign-b"></li>&nbsp;Seleccione un tipo de caja para calular el destare durante las ventas en este destino
+                           <li class="fa fa-exclamation-circle color-exclamation-sign-b"></li>&nbsp;Seleccione un tipo y valor de destare para calcular durante las ventas en este destino
                         </p>
                      </div>
                   </div>

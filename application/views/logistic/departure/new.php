@@ -60,10 +60,10 @@
                         <label for=""><li class="fa fa-exclamation-circle color-exclamation-sign-b"></li>&nbsp;<sup><li class="fa fa-asterisk color-asterisk-required"></li></sup>Conductor</label>
                         <div class="input-group">
                            <label for="txt_ctrl_driver_a" class="input-group-addon" title="Conductor">
-                              <input type="radio" id="txt_ctrl_driver_a" name="txt_ctrl_driver" value="0" required checked <?php if (isset($auto_complete['driver_type']) && $auto_complete['driver_type'] === '0') { echo "checked"; }// else { $_activate = ' disabled'; } ?>>
+                              <input type="radio" id="txt_ctrl_driver_a" name="txt_ctrl_driver" value="0" required checked <?php if (isset($auto_complete['driver_type']) && $auto_complete['driver_type'] === '0') { echo "checked"; }?>>
                               <i class="fa fa-user"></i>
                            </label>
-                           <?php echo form_dropdown('txtdriver_id', $dr, set_value('txtdriver_id', '-1'), 'id="txtdriver_id" class="form-control select2" weight="100%"'); ?>
+                           <?php echo form_dropdown('txtdriver_id', $dr, set_value('txtdriver_id', '-1'), 'id="txtdriver_id" class="form-control select2" weight="100%" '.((isset($auto_complete['driver_type']) && $auto_complete['driver_type'] === '1') ? ' disabled' : '')); ?>
                         </div>
                      </div>
                      <div class="col-xs-12 col-md-6">
